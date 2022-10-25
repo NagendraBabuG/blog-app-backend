@@ -24,7 +24,9 @@ app.use('/posts', posts)
 const JWT_SECRET = '2ayisadzsldszaladlweoewqorwqoqwlaaxlweqzcvnmfda@#$%@lldladsdalwoerutqql/a/s.ccmcvncvldsaw'
 const CONNECTION_URL = 'mongodb+srv://nagendrababug:gnb0009@cluster0.wwsjwxe.mongodb.net/?retryWrites=true&w=majority';
 
-
+app.get('/', (req, res) => {
+    res.json({ status: "ok" })
+})
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
     app.listen(PORT, () => {
