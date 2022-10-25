@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
-const PORT = 3000 | process.env.PORT
+const PORT = process.env.PORT || 3000
 const app = express()
 app.use(express.json())
 
@@ -25,7 +25,7 @@ const JWT_SECRET = '2ayisadzsldszaladlweoewqorwqoqwlaaxlweqzcvnmfda@#$%@lldladsd
 const CONNECTION_URL = 'mongodb+srv://nagendrababug:gnb0009@cluster0.wwsjwxe.mongodb.net/?retryWrites=true&w=majority';
 
 app.get('/', (req, res) => {
-    res.json({ msg: "Welcome to the Server" })
+    res.send("<h1>Welcome to the Server</h1>")
 })
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
