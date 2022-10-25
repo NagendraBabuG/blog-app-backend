@@ -25,7 +25,7 @@ const JWT_SECRET = '2ayisadzsldszaladlweoewqorwqoqwlaaxlweqzcvnmfda@#$%@lldladsd
 const CONNECTION_URL = 'mongodb+srv://nagendrababug:gnb0009@cluster0.wwsjwxe.mongodb.net/?retryWrites=true&w=majority';
 
 app.get('/', (req, res) => {
-    res.render('<h1> Welcome to the Server</h1>')
+    res.json({ msg: "Welcome to the Server" })
 })
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
