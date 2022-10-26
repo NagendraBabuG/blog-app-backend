@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const router = express.Router()
 const user = require('../model/user')
 
-const JWT_SECRET = '2ayisadzsldszaladlweoewqorwqoqwlaaxlweqzcvnmfda@#$%@lldladsdalwoerutqql/a/s.ccmcvncvldsaw'
+const JWT_SECRET = process.env.JWT_SECRET
 
 
 router.post('/', async (req, res) => {

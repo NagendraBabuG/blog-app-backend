@@ -1,8 +1,8 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
-const cors = require('cors')
 const jwt = require('jsonwebtoken')
+require('dotenv').config()
 const PORT = process.env.PORT || 3000
 const app = express()
 app.use(express.json())
@@ -21,8 +21,9 @@ app.use('/editPost', editArticle)
 app.use('/posts', posts)
 
 
-const JWT_SECRET = '2ayisadzsldszaladlweoewqorwqoqwlaaxlweqzcvnmfda@#$%@lldladsdalwoerutqql/a/s.ccmcvncvldsaw'
-const CONNECTION_URL = 'mongodb+srv://nagendrababug:gnb0009@cluster0.wwsjwxe.mongodb.net/?retryWrites=true&w=majority';
+const JWT_SECRET = process.env.JWT_SECRET
+const CONNECTION_URL = process.env.CONNECTION_URL
+
 
 app.get('/', (req, res) => {
     res.send("<h1>Welcome to the Server</h1>")
